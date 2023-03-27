@@ -1,0 +1,99 @@
+using System; 
+using System.Collections;
+using System.Threading;
+
+namespace Arraylist
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList myAL = new ArrayList();
+            myAL.Add("1");
+            myAL.Add("45");
+            myAL.Add("-23");
+            myAL.Add("0");
+            myAL.Add("93302");
+            myAL.Add("-56");
+            myAL.Add("9");
+            ArrayList myAL2 = new ArrayList() { "q", "w", "e" ,"a", "u"};
+            do
+            {
+                string[] menu = new string[11] { "1.void Remove(object value)", "2.void SetRange(int index, ICollection col)", "3.int IndexOf(object value)", "4.void AddRange(ICollection col)", "5.void Reverse()", "6.void Insert(int index, object value)","7.void Sort()", "8.bool Contains(object value):", "9.void Clear()", "10.Выход", "Введите цифру для выбора метода" };
+                Console.WriteLine($"{menu[0]}\n{menu[1]}\n{menu[2]}\n{menu[3]}\n{menu[4]}\n{menu[5]}\n{menu[6]}\n{menu[7]}\n{menu[8]}\n{menu[9]}");
+                int n = int.Parse(Console.ReadLine());
+                Console.Clear();
+                switch (n)
+                {
+                    case 1://
+                        myAL.Remove("-23"); // Удалить элементы из динамического массива.
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 2://
+                        myAL.SetRange(1, myAL2);//копирует в список элементы коллекции col, начиная с индекса index
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 3: //
+                        Console.WriteLine(myAL.IndexOf("-56")); //возвращает индекс элемента 
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 4://
+                        myAL.AddRange(myAL2); // добавляет элемент в конец ArrayList
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 5://
+                        myAL.Reverse(); // переворачиваем список
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 6: //
+                        myAL.Insert(3,"1.5"); //вставляет в список по индексу index объект value
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 7: //
+                        myAL2.Sort();
+                        foreach (var p in myAL2)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 8://
+                        Console.WriteLine(myAL2.Contains("5")); // проверяет, содержится ли в списке объект value.
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 9://
+                        myAL.Clear(); //удаляет из списка все элементы
+                        foreach (var p in myAL)
+                            Console.Write($"{p} ");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
+                    case 10:
+                        Console.Clear();
+                        Console.WriteLine(" ^ ^             ");
+                        Console.WriteLine("( . .)  < Чмок!!> ");
+                        Console.WriteLine("<( )>            ");
+                        Console.WriteLine(" ! !");
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (true);
+        }
+    }
+}
