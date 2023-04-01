@@ -18,9 +18,9 @@ namespace list
             lst.Add("Cлон");
             do
             {
-                string[] menu = new string[11] { "1.bool Contains(T item)", "2.bool Exists(Predicate<T> match)", "3.void RemoveRange(int index, int count)",
-                    "4.int RemoveAll((Predicate<T> match))", "5.int IndexOf(T item)", "6.void Reverse()",
-                    "7.void Reverse(int index, int count)", "8.int BinarySearch(T item)", "9.void Clear()",
+                string[] menu = new string[11] { "1.List.Contains(T item)", "2.List.Exists(Predicate<T> match)", "3.List.RemoveRange(int index, int count)",
+                    "4.List.RemoveAll((Predicate<T> match))", "5.List.IndexOf(T item)", "6.List.Reverse()",
+                    "7.List.Reverse(int index, int count)", "8.List.BinarySearch(T item)", "9.List.Clear()",
                     "10.Выход", "Введите цифру для выбора метода" };
                 Console.WriteLine($"{menu[0]}\n{menu[1]}\n{menu[2]}\n{menu[3]}\n{menu[4]}\n{menu[5]}\n{menu[6]}\n{menu[7]}\n{menu[8]}\n{menu[9]}");
                 int n = int.Parse(Console.ReadLine());
@@ -87,6 +87,11 @@ namespace list
                         Console.WriteLine("<( )>            ");
                         Console.WriteLine(" ! !");
                         Environment.Exit(0);
+                        break;
+		   default:
+                        Console.WriteLine("Введите еще раз");
+                        Thread.Sleep(3000);
+                        Console.Clear();
                         break;
                 }
             } while (true);
