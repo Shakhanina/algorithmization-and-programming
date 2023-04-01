@@ -33,12 +33,12 @@ namespace sortedList
                 Console.Clear();
                 switch (n)
                 {
-                    case 1://
+                    case 1:
                         Console.WriteLine(sl.ContainsKey("книга"));
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
-                    case 2://
+                    case 2:
                         Console.WriteLine(sl.ContainsValue("чмок!"));
                         Thread.Sleep(3000);
                         Console.Clear();
@@ -50,28 +50,28 @@ namespace sortedList
                         Console.Clear();
                         break;
                     case 4:
-                        sl.SetByIndex(3, "Как дела?"); // Заменяет значение по указанному индексу в объекте SortedList.
+                        sl.SetByIndex(3, "Как дела?");
                         Print(sl);
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
-                    case 5://
-                        Console.WriteLine("Хэш-код: " + sl.GetHashCode());// Хэш-код для текущего объекта.
+                    case 5:
+                        Console.WriteLine("Хэш-код: " + sl.GetHashCode());
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
-                    case 6://
-                        Console.WriteLine(sl.GetKey(2)); // Получает ключ с указанным индексом из объекта SortedList.
+                    case 6:
+                        Console.WriteLine(sl.GetKey(2));
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
-                    case 7://
-                        Console.WriteLine( sl.GetKey(1));//Получает ключи из объекта SortedList.
+                    case 7:
+                        Console.WriteLine( sl.GetKey(1));
                         Console.WriteLine(sl.GetByIndex(1));
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
-                    case 8://
+                    case 8:
                         sl.Remove("яблоко");
                         Print(sl);
                         Thread.Sleep(3000);
@@ -90,6 +90,11 @@ namespace sortedList
                         Console.WriteLine("<( )>            ");
                         Console.WriteLine(" ! !");
                         Environment.Exit(0);
+                        break;
+                     default:
+                        Console.WriteLine("Введите еще раз");
+                        Thread.Sleep(3000);
+                        Console.Clear();
                         break;
                 }
             } while (true);
