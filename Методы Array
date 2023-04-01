@@ -91,6 +91,11 @@ namespace array
                         Console.WriteLine(" ! !");
                         Environment.Exit(0);
                         break;
+                    default:
+                        Console.WriteLine("Введите еще раз");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        break;
                 }
             } while (true);
         }            
