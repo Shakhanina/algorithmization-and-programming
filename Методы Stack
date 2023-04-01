@@ -17,7 +17,7 @@ namespace stack
             st.Push("пять");
             do
             {
-                string[] menu = new string[11] { "1.Stac .Contains (object obj)", "2.Stack.Peek()", "3.Stack.Pop()",
+                string[] menu = new string[11] { "1.Stac.Contains (object obj)", "2.Stack.Peek()", "3.Stack.Pop()",
                     "4.Stack.ToArray", "5.Stack.CopyTo()", "6.Stack.GetHashCode",
                     "7.Stack.TryPeek(out T result)", "8.Stack.ToString()", "9.Stack.Clear",
                     "10.Выход", "Введите цифру для выбора метода" };
@@ -90,6 +90,11 @@ namespace stack
                         Console.WriteLine("<( )>            ");
                         Console.WriteLine(" ! !");
                         Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Введите еще раз");
+                        Thread.Sleep(3000);
+                        Console.Clear();
                         break;
                 }
             } while (true);
