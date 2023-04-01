@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace stack
@@ -8,17 +9,17 @@ namespace stack
     {
         static void Main(string[] args)
         {
-            Stack st = new Stack();
-            st.Push("one");
-            st.Push("two");
-            st.Push("three");
-            st.Push("four");
-            st.Push("five");
+            Stack<string> st = new Stack<string>();
+            st.Push("один");
+            st.Push("два");
+            st.Push("три");
+            st.Push("четыре");
+            st.Push("пять");
             do
             {
                 string[] menu = new string[11] { "1.Stac .Contains (object obj)", "2.Stack.Peek()", "3.Stack.Pop()",
                     "4.Stack.ToArray", "5.Stack.CopyTo()", "6.Stack.GetHashCode",
-                    "7.Stack.Synchronized()", "8.Stack.ToString()", "9.Stack.Clear",
+                    "7.Stack.TryPeek(out T result)", "8.Stack.ToString()", "9.Stack.Clear",
                     "10.Выход", "Введите цифру для выбора метода" };
                 Console.WriteLine($"{menu[0]}\n{menu[1]}\n{menu[2]}\n{menu[3]}\n{menu[4]}\n{menu[5]}\n{menu[6]}\n{menu[7]}\n{menu[8]}\n{menu[9]}");
                 int n = int.Parse(Console.ReadLine());
@@ -36,7 +37,8 @@ namespace stack
                         Console.Clear();
                         break;
                     case 3:
-                        Console.WriteLine(st.Pop()); 
+                        string str = st.Pop();
+                        Console.Write(str + " ");
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
@@ -53,9 +55,9 @@ namespace stack
                     case 5:
                         string[] arr = new string[st.Count];
                         st.CopyTo(arr, 0);
-                        foreach (string str in arr)
+                        foreach (string s in arr)
                         {
-                            Console.WriteLine(str);
+                            Console.WriteLine(s);
                         }
                         Thread.Sleep(3000);
                         Console.Clear();
@@ -66,7 +68,8 @@ namespace stack
                         Console.Clear();
                         break;
                     case 7:
-                        Console.WriteLine(st.IsSynchronized ? "синхронизирован" : "не синхронизирован");
+                        var success1 = st.TryPop(out var p); 
+                        if (success1) Console.WriteLine(p);
                         Thread.Sleep(3000);
                         Console.Clear();
                         break;
